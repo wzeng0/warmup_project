@@ -21,9 +21,9 @@ class DriveSquare(object):
             #code to go forward
 
             #how much we want the turtlebot to move forward every time
-            self.twist.linear.x = .5
+            self.twist.linear.x = 2
             # sleeps for 1 second before publishing
-            rospy.sleep(2.3)
+            rospy.sleep(1.08)
             #publishes  and goes forward for 5 seconds
             self.robot_movement_pub.publish(self.twist)
             
@@ -32,7 +32,7 @@ class DriveSquare(object):
             self.twist.linear.x = 0
 
             #angle of rotation
-            self.twist.angular.z = 0.75
+            self.twist.angular.z = 1.57
             
             # how long to stop before publish
             rospy.sleep(2)
