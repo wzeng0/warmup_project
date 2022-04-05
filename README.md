@@ -22,3 +22,6 @@ A challenge I faced writing this part of the project was definitely my inexperie
 
 ## Improvements
 If I had time, I would try to figure out what was wrong with my rotation. I tried to test run my robot for this function many times but each time finding myself face to face to what seems like a different rotation at each vertex of the square. I think it might be largly due to the friction of the force or maybe the battery of the robots were not enough.
+
+## GIF
+![drive-in-square_1-2-2-2-2](https://user-images.githubusercontent.com/75603464/161701468-5b635369-9bad-4132-9e8f-10ea3b2005b4.gif)
