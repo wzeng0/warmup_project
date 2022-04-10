@@ -35,4 +35,4 @@ class FollowPerson(object):
         rospy.spin()
 if __name__ == '__main__':
     node = FollowPerson()
-    node.run()
+    node.run() 
