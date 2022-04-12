@@ -25,3 +25,53 @@ If I had time, I would try to figure out what was wrong with my rotation. I trie
 
 ## GIF
 ![drive-in-square_1-2-2-2-2](https://user-images.githubusercontent.com/75603464/161701468-5b635369-9bad-4132-9e8f-10ea3b2005b4.gif)
+
+## Person Follower
+### Problem
+The problem was to make the robot follow a person around and stops when it is a certain distance from the person it is following.
+At first, I used the stop at wall function for reference since I realize that the bot will go towards the wall and stop at a certain distance. Therefore, If I can make it go forward according to a moving object, the code would be similar. I needed to use the sensor to my advantage and move the robot according to what its sensors detect.
+
+### My Approach
+My approach to this problem was to scan for the nearest object to the robot and 
+change directions so that the robot faces that closest object and moves towards
+it. I want the robot to only stop when it is too close to the object and if it
+is not too close, keep moving forward and turning so that it faces the closest
+object.
+
+### My Functions
+In the init function, I initialized the node, publisher, subscriber, as well as the twist of the robot so that the twist was 0 and the robot was not moving.
+Then in the scan_callback function is where I put all the robot movement in. 
+Going with the approach I had, I wanted the robot to first scan its surroundings to find the object that is closest to it assuming there is. If there isn't the robot shouldn't move at all since there is nothintg to follow. That brings me to the rotation aspect. So if there is an object that was picked up by the sensor, take the angle with the closest object and rotate so that it is facing the object at 0 degrees. I had to account for turning left or right since if the object is to the right of the robot, I didn't want the robot to turn an angle that is more than 180 from the left all the way to the right. Then I set the linear aspect of the turn to be a set forward speed since I want the roboto to be continuously moving.
+My challenge with this aspect was to find a formula where I can turn angles greater than 180 to its positive counter parts. For example, if an object was detected at 270 degrees, I wanted the equation to output -90 so that the robot rotates 90 degrees to the right. I also wanted the robot turn speed to stay between 1 and -1 since a large number might not be processed. Therefore, I realized that if i divided my equation by 180, I can receive a number between 0 and -1 or 0 and 1. Then, I multiplied by 1.8 since that is the maximum turn speed of the robot and I didn't want the turning to be too slow.
+
+## Challenges
+A challenge I faced writing this part of the project was account for the error in the turn of the robot. I also had a very shallow understanding of the sensor details of the robot. For example, I did not understand that sensor.ranges was an array of size 359 and the distance an object is to the designated angle. Furthermore, I was not aware that the angle of the bot was counterclockwise which caused a lot of confusion. I was able to overcome these challenges through the diagrams and instructions of my TAs. In addition, I  used a lot of unecessary if statements which casued my code to be relatively unreadable which was also corrected through instructions from TA to help me realize which if statements were unecessary.
+
+## Improvements
+I would change the angle of rotation of my robot to turn quicker. Right now, although it is at max rotation speed, I realize that other people's robots turn relatively quicker than mine. Therefore, I would like to find out where in my code I can fix to change the rotation speed.
+
+## GIF
+
+## Wall Follower
+### Problem
+The problem was to make the robot follow a wall at a 90 degree angle nonstop at a set distance away from the wall.
+At first, I realize that this function is somewhat similar to the person following function since now we just want the robot to follow the closest object to it at a 90 degree angle (or 270). Therefore, If I can make the robot keep the object to its 90 degree standard, it would be following the wall.
+
+### My Approach
+My approach to this problem was to scan for the nearest object to the robot and change its direction so that the closest object should be at at 90 degrees of the robot. I figured that if after adjustment and the robot isn't the set distance away from the wall, it would adjust itself first accordingly and then continue to follow the wall.
+
+### My Functions
+In the init function, my approach was the same as the perseon follower. I initialized the node, publisher, subscriber, as well as the twist of the robot so that the twist was 0 and the robot was not moving.
+Then in the scan_callback function is where I put all the robot movement in. 
+Going with the approach I had, I wanted the robot to first scan its surroundings to find the object that is closest to it assuming there is. If there isn't the robot shouldn't move at all since there is nothintg to follow.
+That brings me to the rotation aspect. So if there is an object that was picked up by the sensor, take the angle with the closest object and rotate so that the robot's sensor at 90 degrees picks the object up (the wall) as the closest object. 
+My particular challenge with this portion is to find a way to keep the wall at the robot's 90 degree. In the previous follow person function, I used 0 degrees, the head of the robot, to follow the person. Therefore, my approach to this was to set the "head" of  the robot to its side which was 90 degrees and pretend that is the 0 degree of the person follower. I solved this by just -90 to all the angle output of the robot and adjusted the left and right turn accordingly.
+
+## Challenges
+A challenge I faced writing this part of the project was to keep the robot a set distance away from the wall. My approach to this is to first rotate the robot so that the wall is 90 degrees from it. Then check if the distance between the wall and the 90 degree sensor is the set distance. If it is lower, then rotate out 45 degrees so that the 45 degree from 90 is far enough from the wall. Then rotate it back to 90 and follow the wall like that.
+
+## Improvements
+I would like for the 
+
+## GIF
+
