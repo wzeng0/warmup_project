@@ -64,14 +64,15 @@ My approach to this problem was to scan for the nearest object to the robot and 
 In the init function, my approach was the same as the perseon follower. I initialized the node, publisher, subscriber, as well as the twist of the robot so that the twist was 0 and the robot was not moving.
 Then in the scan_callback function is where I put all the robot movement in. 
 Going with the approach I had, I wanted the robot to first scan its surroundings to find the object that is closest to it assuming there is. If there isn't the robot shouldn't move at all since there is nothintg to follow.
+Then, I wanted to make sure the robot is a set distance away from the wall. If it is too close to the wall and is facing inward, then I want it to face outwards and move out. If it is too close and is facing outward, then I want it to keep going in that direction and vice versa.
 That brings me to the rotation aspect. So if there is an object that was picked up by the sensor, take the angle with the closest object and rotate so that the robot's sensor at 90 degrees picks the object up (the wall) as the closest object. 
 My particular challenge with this portion is to find a way to keep the wall at the robot's 90 degree. In the previous follow person function, I used 0 degrees, the head of the robot, to follow the person. Therefore, my approach to this was to set the "head" of  the robot to its side which was 90 degrees and pretend that is the 0 degree of the person follower. I solved this by just -90 to all the angle output of the robot and adjusted the left and right turn accordingly.
 
 ## Challenges
-A challenge I faced writing this part of the project was to keep the robot a set distance away from the wall. My approach to this is to first rotate the robot so that the wall is 90 degrees from it. Then check if the distance between the wall and the 90 degree sensor is the set distance. If it is lower, then rotate out 45 degrees so that the 45 degree from 90 is far enough from the wall. Then rotate it back to 90 and follow the wall like that.
+A challenge I faced writing this part of the project was to keep the robot a set distance away from the wall. My approach to this is to first rotate the robot so that the wall is 90 degrees from it. Then check if the distance between the wall and the 90 degree sensor is the set distance. If it is lower, then rotate out 45 degrees so that the 45 degree from 90 is far enough from the wall. Then rotate it back to 90 and follow the wall like that. Another challenge I had was after I was able to account for the set distance, I realized that my robot takes a super long time to adjust to that distance at every turn.
 
 ## Improvements
-I think that I can improve the adapbility of the robot by setting a range of angles for the sensor since the sensor might not be too accurate. That way the bot has more leeway when moving and detecting objects.
+I think that I can improve the adapbility of the robot by setting a range of angles for the sensor since the sensor might not be too accurate. That way the bot has more leeway when moving and detecting objects. I can also improve the turn speed of the robot so it adjusts to the distance a bit faster.
 
 ## GIF
 
