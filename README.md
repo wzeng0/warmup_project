@@ -51,6 +51,7 @@ A challenge I faced writing this part of the project was account for the error i
 I would change the angle of rotation of my robot to turn quicker. Right now, although it is at max rotation speed, I realize that other people's robots turn relatively quicker than mine. Therefore, I would like to find out where in my code I can fix to change the rotation speed.
 
 ## GIF
+![person_follower](IMG_5356.gif)
 
 ## Wall Follower
 ### Problem
