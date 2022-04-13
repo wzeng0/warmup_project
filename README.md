@@ -71,7 +71,7 @@ My particular challenge with this portion is to find a way to keep the wall at t
 A challenge I faced writing this part of the project was to keep the robot a set distance away from the wall. My approach to this is to first rotate the robot so that the wall is 90 degrees from it. Then check if the distance between the wall and the 90 degree sensor is the set distance. If it is lower, then rotate out 45 degrees so that the 45 degree from 90 is far enough from the wall. Then rotate it back to 90 and follow the wall like that.
 
 ## Improvements
-I would like for the 
+I think that I can improve the adapbility of the robot by setting a range of angles for the sensor since the sensor might not be too accurate. That way the bot has more leeway when moving and detecting objects.
 
 ## GIF
 
