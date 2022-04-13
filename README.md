@@ -76,4 +76,4 @@ A challenge I faced writing this part of the project was to keep the robot a set
 I think that I can improve the adapbility of the robot by setting a range of angles for the sensor since the sensor might not be too accurate. That way the bot has more leeway when moving and detecting objects. I can also improve the turn speed of the robot so it adjusts to the distance a bit faster.
 
 ## GIF
-![wall_follower](IMG_5355 2-2.gif)
+![wall_follower](https://github.com/wzeng0/warmup_project/blob/cd1f0c678f3420372e851b57269056e357001fb3/IMG_5355%202-2.gif)
